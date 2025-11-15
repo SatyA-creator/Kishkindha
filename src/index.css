@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 8%;
+    --foreground: 60 56% 91%;
+
+    --card: 150 36% 12%;
+    --card-foreground: 60 56% 91%;
+
+    --popover: 150 36% 10%;
+    --popover-foreground: 60 56% 91%;
+
+    --primary: 43 65% 53%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 150 36% 17%;
+    --secondary-foreground: 60 56% 91%;
+
+    --muted: 0 0% 17%;
+    --muted-foreground: 60 20% 70%;
+
+    --accent: 0 100% 27%;
+    --accent-foreground: 60 56% 91%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 56% 91%;
+
+    --border: 150 36% 20%;
+    --input: 150 36% 15%;
+    --ring: 43 65% 53%;
+
+    --radius: 0.75rem;
+
+    /* Mythological theme colors */
+    --jungle-green: 150 36% 17%;
+    --golden-amber: 43 65% 53%;
+    --crimson: 0 100% 27%;
+    --warm-glow: 13 100% 60%;
+    --charcoal: 0 0% 17%;
+    --mystic-light: 60 56% 91%;
+
+    /* Glass effect */
+    --glass-bg: 150 36% 12% / 0.4;
+    --glass-border: 150 36% 30% / 0.3;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 60 56% 91%;
+
+    --card: 150 36% 12%;
+    --card-foreground: 60 56% 91%;
+
+    --popover: 150 36% 10%;
+    --popover-foreground: 60 56% 91%;
+
+    --primary: 43 65% 53%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 150 36% 17%;
+    --secondary-foreground: 60 56% 91%;
+
+    --muted: 0 0% 17%;
+    --muted-foreground: 60 20% 70%;
+
+    --accent: 0 100% 27%;
+    --accent-foreground: 60 56% 91%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 56% 91%;
+
+    --border: 150 36% 20%;
+    --input: 150 36% 15%;
+    --ring: 43 65% 53%;
+  }
+}
+
+@layer utilities {
+  .glass-morphism {
+    background: rgba(26, 61, 46, 0.15);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(26, 61, 46, 0.2);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--golden-amber)), hsl(var(--warm-glow)));
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+  }
+
+  .gradient-jungle {
+    background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--jungle-green) / 0.2));
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--warm-glow) / 0.6),
+                 0 0 40px hsl(var(--golden-amber) / 0.4),
+                 0 0 60px hsl(var(--primary) / 0.2);
+  }
+
+  .jungle-title {
+    font-family: 'Creepster', 'fantasy';
+    text-shadow: 2px 2px 0px hsl(var(--charcoal)),
+                 4px 4px 8px hsl(var(--jungle-green) / 0.8),
+                 0 0 20px hsl(var(--golden-amber) / 0.5);
+    letter-spacing: 0.1em;
+    transform: perspective(1000px) rotateX(10deg);
+  }
+
+  .jungle-text {
+    font-family: 'Butcherman', 'Chela One', 'cursive';
+    text-shadow: 1px 1px 2px hsl(var(--charcoal)),
+                 0 0 10px hsl(var(--jungle-green) / 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .particle-glow {
+    box-shadow: 0 0 15px hsl(var(--primary) / 1),
+                0 0 30px hsl(var(--primary) / 0.6),
+                0 0 45px hsl(var(--primary) / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Creepster', 'Butcherman', 'Chela One', cursive;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--warm-glow));
+  }
+}
