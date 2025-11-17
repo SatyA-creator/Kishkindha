@@ -55,9 +55,9 @@ export default {
         mystic: "hsl(var(--mystic-light))",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Creepster', 'Butcherman', 'Chela One', 'cursive'],
-        jungle: ['Nosifer', 'Creepster', 'fantasy'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Rimba Andalas', 'Kalam', 'serif'],
+        rimba: ['Rimba Andalas', 'Kalam', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

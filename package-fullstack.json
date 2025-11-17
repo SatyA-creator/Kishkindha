@@ -1,0 +1,14 @@
+{
+  "name": "kishkindha-fullstack",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd . && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "install:all": "npm install && cd backend && npm install",
+    "build": "npm run build && cd backend && npm install --production"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

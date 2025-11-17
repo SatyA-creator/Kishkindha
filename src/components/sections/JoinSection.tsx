@@ -12,15 +12,73 @@ export const JoinSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for joining!",
-      description: "We'll keep you updated on Kishkindha Kand's progress.",
-    });
-    setEmail("");
+    
+    if (!email.trim()) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/subscription/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          preferences: {
+            gameUpdates: true,
+            betaAccess: true,
+            newsletter: true
+          },
+          metadata: {
+            source: 'website',
+            campaign: 'join-section'
+          }
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: "🎮 Welcome to Kishkindha Kand!",
+          description: "Check your email for a welcome message with exclusive updates!",
+        });
+        setEmail("");
+      } else {
+        // Handle specific error cases
+        if (response.status === 409) {
+          toast({
+            title: "Already Subscribed",
+            description: "You're already part of our community! Check your email for updates.",
+            variant: "default",
+          });
+        } else {
+          throw new Error(data.message || 'Failed to subscribe');
+        }
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Subscription Failed",
+        description: "Please try again later or contact support if the problem persists.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -64,8 +122,12 @@ export const JoinSection = () => {
                   required
                   className="flex-1 bg-background border-primary/30 focus:border-primary text-sm sm:text-base"
                 />
-                <Button type="submit" className="gradient-gold text-primary-foreground font-semibold whitespace-nowrap">
-                  Subscribe
+                <Button 
+                  type="submit" 
+                  disabled={isLoading}
+                  className="gradient-gold text-primary-foreground font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? 'Subscribing...' : 'Subscribe'}
                 </Button>
               </form>
             </ParchmentCard>
