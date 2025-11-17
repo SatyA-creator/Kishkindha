@@ -5,17 +5,17 @@ export const Footer = () => {
     <footer
       className="
         relative 
-        border-t border-border/20 
+        border-t border-primary/30 
         py-14 
-        bg-gradient-to-b 
-        from-[#0e1912] via-[#09130d] to-[#050806]
+        backdrop-blur-sm
       "
+      style={{ backgroundColor: '#2a2520' }}
     >
-      {/* Subtle forest glow effect */}
+      {/* Subtle golden glow effects matching contact us theme */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-green-900/20 to-transparent blur-3xl opacity-40" />
-        <div className="absolute bottom-0 left-0 w-40 h-40 bg-green-900/10 blur-2xl rounded-full opacity-30" />
-        <div className="absolute bottom-0 right-0 w-40 h-40 bg-green-800/10 blur-2xl rounded-full opacity-30" />
+        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-primary/10 to-transparent blur-3xl opacity-30" />
+        <div className="absolute bottom-0 left-0 w-40 h-40 bg-primary/5 blur-2xl rounded-full opacity-25" />
+        <div className="absolute bottom-0 right-0 w-40 h-40 bg-primary/8 blur-2xl rounded-full opacity-25" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

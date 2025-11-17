@@ -16,8 +16,11 @@ export const GlobalBackgroundVideo = () => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
-      setIsVisible(scrollPosition > heroHeight * 0.5); // Show when 50% through hero
+      setIsVisible(scrollPosition > heroHeight * 0.1); // Show when 10% through hero
     };
+
+    // Show video immediately
+    setIsVisible(true);
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -36,14 +39,14 @@ export const GlobalBackgroundVideo = () => {
         muted
         loop
         playsInline
-        style={{ opacity: 0.3 }}
+        style={{ opacity: 0.8 }}
       >
         <source src="/bg1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      {/* Global dark overlay to ensure text readability across all sections */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60" />
-      <div className="absolute inset-0 bg-jungle-green/20" />
+      {/* Lighter overlay to maintain text readability while showing video */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/30" />
+      <div className="absolute inset-0 bg-jungle-green/10" />
     </div>
   );
 };

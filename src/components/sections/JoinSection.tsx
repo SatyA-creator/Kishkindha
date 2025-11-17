@@ -96,7 +96,7 @@ export const JoinSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-4 sm:mb-6">
             Join Our Community
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-foreground/90 mb-8 sm:mb-12 px-4">
+          <p className="text-base sm:text-lg md:text-xl text-foreground mb-8 sm:mb-12">
             Let's create something amazing together
           </p>
 
@@ -107,10 +107,10 @@ export const JoinSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8 sm:mb-12"
           >
-            <ParchmentCard variant="primary">
+            <ParchmentCard variant="dark">
               <Mail className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-3 sm:mb-4" />
               <h3 className="font-display text-xl sm:text-2xl text-primary mb-3 sm:mb-4">Stay Updated</h3>
-              <p className="text-foreground/90 mb-4 sm:mb-6 text-sm sm:text-base px-2">
+              <p className="text-foreground mb-4 sm:mb-6 text-sm sm:text-base px-2">
                 Get exclusive development updates, behind-the-scenes content, and early access opportunities
               </p>
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

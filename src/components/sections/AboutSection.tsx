@@ -68,17 +68,19 @@ export const AboutSection = () => {
           The Vision
         </motion.h2>
 
-        <motion.p
-          className="text-base sm:text-lg md:text-xl text-foreground/90 max-w-4xl mx-auto leading-relaxed px-4"
+        <motion.div
+          className="glass-morphism bg-background/90 backdrop-blur-sm border border-primary/20 rounded-lg p-6 sm:p-8 md:p-10 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Vali and Sugriva brothers, kings, and reflections of each other. Bound by love. Divided by a
-          single moment of fear. The game lets you live both their stories to see how two versions of
-          truth and misunderstanding can destroy a kingdom. You don't play heroes. You play memory,
-          pride, guilt, and forgiveness.
-        </motion.p>
+          <p className="text-base sm:text-lg md:text-xl text-foreground leading-relaxed">
+            Vali and Sugriva brothers, kings, and reflections of each other. Bound by love. Divided by a
+            single moment of fear. The game lets you live both their stories to see how two versions of
+            truth and misunderstanding can destroy a kingdom. You don't play heroes. You play memory,
+            pride, guilt, and forgiveness.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

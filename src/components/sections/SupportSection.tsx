@@ -61,7 +61,7 @@ export const SupportSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-4 sm:mb-6">
             Support & FAQ
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-foreground/90 px-4">
+          <p className="text-base sm:text-lg md:text-xl text-foreground">
             Find answers to common questions
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ export const SupportSection = () => {
                   <AccordionTrigger className="text-left font-display text-base sm:text-lg text-primary hover:text-golden hover:no-underline transition-colors">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-foreground/90 pt-2 text-sm sm:text-base">
+                  <AccordionContent className="text-foreground pt-2 text-sm sm:text-base">
                     {faq.answer}
                   </AccordionContent>
                 </ParchmentCard>
@@ -100,10 +100,10 @@ export const SupportSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <ParchmentCard variant="primary">
+          <ParchmentCard variant="dark">
             <Mail className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-3 sm:mb-4" />
             <h3 className="font-display text-xl sm:text-2xl text-primary mb-3 sm:mb-4">Contact Us</h3>
-            <p className="text-foreground/90 mb-3 sm:mb-4 text-sm sm:text-base px-2">
+            <p className="text-foreground mb-3 sm:mb-4 text-sm sm:text-base px-2">
               Have more questions? We'd love to hear from you.
             </p>
             <a

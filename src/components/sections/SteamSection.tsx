@@ -46,31 +46,33 @@ export const SteamSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <Heart className="w-12 h-12 sm:w-16 sm:h-16 text-accent mx-auto mb-4 sm:mb-6 animate-float" />
-          
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-4 sm:mb-6">
-            Join the Journey
-          </h2>
-          
-          <p className="text-base sm:text-lg md:text-xl text-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
-            Be part of bringing ancient Indian mythology to modern gaming. Wishlist Kishkindha Kand on Steam
-            and get notified on launch.
-          </p>
+          <div className="glass-morphism bg-background/90 backdrop-blur-sm border border-primary/20 rounded-lg p-6 sm:p-8 md:p-10 mb-8">
+            <Heart className="w-12 h-12 sm:w-16 sm:h-16 text-accent mx-auto mb-4 sm:mb-6 animate-float" />
+            
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-4 sm:mb-6">
+              Join the Journey
+            </h2>
+            
+            <p className="text-base sm:text-lg md:text-xl text-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+              Be part of bringing ancient Indian mythology to modern gaming. Wishlist Kishkindha Kand on Steam
+              and get notified on launch.
+            </p>
 
-          <motion.div
-            className="mb-8 sm:mb-12"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Button
-              size="lg"
-              className="gradient-gold text-primary-foreground font-bold px-8 sm:px-12 py-6 sm:py-8 text-lg sm:text-xl hover:scale-110 transition-transform animate-glow-pulse w-full sm:w-auto"
+            <motion.div
+              className="mb-8 sm:mb-12"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <ExternalLink className="mr-2 sm:mr-3" size={20} />
-              Wishlist on Steam
-            </Button>
-          </motion.div>
+              <Button
+                size="lg"
+                className="gradient-gold text-primary-foreground font-bold px-8 sm:px-12 py-6 sm:py-8 text-lg sm:text-xl hover:scale-110 transition-transform animate-glow-pulse w-full sm:w-auto"
+              >
+                <ExternalLink className="mr-2 sm:mr-3" size={20} />
+                Wishlist on Steam
+              </Button>
+            </motion.div>
+          </div>
 
           <motion.div
             className="max-w-2xl mx-auto"
@@ -78,9 +80,9 @@ export const SteamSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <ParchmentCard variant="primary">
+            <ParchmentCard variant="dark" className="bg-background/95 backdrop-blur-sm border-2 border-primary/30">
               <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">Early supporters will receive:</p>
-              <ul className="text-foreground/90 space-y-1 sm:space-y-2 text-sm sm:text-base">
+              <ul className="text-foreground space-y-1 sm:space-y-2 text-sm sm:text-base">
                 <li>✦ Day-one launch notification</li>
                 <li>✦ Exclusive behind-the-scenes updates</li>
                 <li>✦ Priority access to beta testing opportunities</li>

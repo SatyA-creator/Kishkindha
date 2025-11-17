@@ -104,24 +104,24 @@ export const FeaturesSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <ParchmentCard variant="primary">
+          <ParchmentCard variant="dark" className="bg-background/95 backdrop-blur-sm border-2 border-primary/30">
             <h3 className="font-display text-3xl text-primary mb-6 text-center">Target Audience</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <p className="font-semibold text-primary mb-2">Platform</p>
-                <p className="text-foreground/90">PC (Unity Engine)</p>
+                <p className="text-foreground">PC (Unity Engine)</p>
               </div>
               <div>
                 <p className="font-semibold text-primary mb-2">Age</p>
-                <p className="text-foreground/90">12+</p>
+                <p className="text-foreground">12+</p>
               </div>
               <div>
                 <p className="font-semibold text-primary mb-2">Genre Appeal</p>
-                <p className="text-foreground/90">Indie narrative players and mythic action audiences</p>
+                <p className="text-foreground">Indie narrative players and mythic action audiences</p>
               </div>
               <div>
                 <p className="font-semibold text-primary mb-2">Audience</p>
-                <p className="text-foreground/90">All genders, role-playing and action lovers</p>
+                <p className="text-foreground">All genders, role-playing and action lovers</p>
               </div>
             </div>
           </ParchmentCard>
