@@ -74,7 +74,7 @@ export const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Vali and Sugriva—brothers, kings, and reflections of each other. Bound by love. Divided by a
+          Vali and Sugriva brothers, kings, and reflections of each other. Bound by love. Divided by a
           single moment of fear. The game lets you live both their stories to see how two versions of
           truth and misunderstanding can destroy a kingdom. You don't play heroes. You play memory,
           pride, guilt, and forgiveness.
